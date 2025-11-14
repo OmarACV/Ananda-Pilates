@@ -1,0 +1,33 @@
+# Ignorar dependencias y archivos temporales
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Entornos / secretos
+.env
+.env.local
+.env.*.local
+
+# Sistema / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
+
+# Logs y temporales
+*.log
+*.tmp
+
+# Binarios locales (ejemplo ngrok)
+bin/ngrok
+.ngrok2/
+
+# Build / dist
+dist/
+build/

@@ -1,0 +1,52 @@
+name: Deploy public build
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    name: Deploy to public repo (manual toggle)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check deploy toggle file
+        run: |
+          if [ ! -f DEPLOY_PUBLIC ]; then
+            echo "DEPLOY_PUBLIC file not found in repo root. Skipping public deploy.\nTo enable automatic deploys create an empty file named DEPLOY_PUBLIC and push it to main.";
+            exit 0;
+          fi
+
+      - name: Prepare and push to public repository
+        env:
+          PUBLIC_REPO: https://github.com/OmarACV/Ananda-Pilates.git
+          PAT: ${{ secrets.PUBLIC_REPO_PAT }}
+        run: |
+          set -euo pipefail
+          echo "Preparing temporary deploy directory"
+          TMPDIR=$(mktemp -d)
+          echo "Copying files to $TMPDIR"
+          rsync -av --exclude='.git' . "$TMPDIR/" >/dev/null
+          cd "$TMPDIR"
+
+          git init
+          git checkout -b main
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Deploy from private repo: $GITHUB_REPOSITORY@$GITHUB_SHA"
+
+          if [ -z "$PAT" ]; then
+            echo "Error: PUBLIC_REPO_PAT secret is empty. Aborting." >&2
+            exit 1
+          fi
+
+          echo "Pushing to public repo $PUBLIC_REPO"
+          git push --force "https://${PAT}@github.com/OmarACV/Ananda-Pilates.git" main

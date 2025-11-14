@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananda Pilates</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="brand">Ananda Pilates</div>
+        <ul>
+            <li><a href="#inicio" onclick="scrollTo('inicio')">Inicio</a></li>
+            <li><a href="#noticias" onclick="scrollTo('noticias')">Noticias</a></li>
+            <li><a href="#actualizaciones" onclick="scrollTo('actualizaciones')">Actualizaciones</a></li>
+            <li><a href="#reservas" onclick="scrollTo('reservas')">Reservas</a></li>
+            <li><a href="#sobre" onclick="scrollTo('sobre')">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <section id="inicio">
+        <h1>Ananda Pilates</h1>
+        <p>Transforma tu cuerpo y mente</p>
+        <button onclick="scrollTo('reservas')">Reservar Clase</button>
+        <button onclick="scrollTo('sobre')">Conocer Más</button>
+    </section>
+
+    <section id="noticias">
+        <h2>Noticias</h2>
+        <div class="news-item">
+            <h3>🎁 Promociones Navideñas</h3>
+            <p>Descuentos especiales en membresías anuales durante diciembre.</p>
+        </div>
+        <div class="news-item">
+            <h3>❄️ Clases de Invierno</h3>
+            <p>Nuevos horarios especiales para la temporada navideña.</p>
+        </div>
+    </section>
+
+    <section id="actualizaciones">
+        <h2>Actualizaciones</h2>
+        <div class="update-item">
+            <h4>Versión 2.1.0</h4>
+            <p>Mejoras en la estabilidad y corrección de errores menores.</p>
+        </div>
+    </section>
+
+    <section id="reservas">
+        <h2>Reservas y Horarios</h2>
+        <div class="class-card">
+            <h3>Pilates Básico</h3>
+            <p>Lunes 10:00 - 6 plazas</p>
+            <button onclick="alert('Reserva: Pilates Básico')">Reservar</button>
+        </div>
+        <div class="class-card">
+            <h3>Pilates Intermedio</h3>
+            <p>Miércoles 18:00 - 8 plazas</p>
+            <button onclick="alert('Reserva: Pilates Intermedio')">Reservar</button>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre Ananda Pilates</h2>
+        <p>Tu espacio de bienestar y transformación</p>
+        <div class="info">
+            <h3>📍 Ubicación</h3>
+            <p>Calle Principal #123, Centro</p>
+            
+            <h3>🕰️ Horarios</h3>
+            <p>Lunes a Viernes: 6:00 - 21:00</p>
+            
+            <h3>📞 Contacto</h3>
+            <p>Teléfono: +1 (555) 123-4567</p>
+        </div>
+    </section>
+
+    <script>
+        function scrollTo(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

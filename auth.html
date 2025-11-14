@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Registro e Inicio de Sesión - Ananda Pilates</title>
+	<link rel="stylesheet" href="auth-style.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- Snowfall Effect -->
+	<div class="snowfall"></div>
+
+	<div class="auth-container">
+		<div class="auth-header">
+			<a href="index.html" class="back-link">← Volver al inicio</a>
+			<div class="brand">
+				<h1>🎄 Ananda Pilates</h1>
+				<p>Tu cuenta navideña</p>
+			</div>
+		</div>
+
+		<!-- Login Form -->
+		<div id="login-section" class="auth-section active">
+			<div class="auth-card">
+				<div class="christmas-badge">✨ Especial Navidad ✨</div>
+				<h2>Iniciar Sesión</h2>
+				<form id="login-form" class="auth-form">
+					<div class="form-group">
+						<label for="login-email">Correo electrónico</label>
+						<input id="login-email" name="email" type="email" placeholder="tu@email.com" required />
+					</div>
+					<div class="form-group">
+						<label for="login-password">Contraseña</label>
+						<div class="password-field">
+							<input id="login-password" name="password" type="password" placeholder="••••••••" required />
+							<button type="button" class="toggle-password" data-target="login-password">👁️</button>
+						</div>
+					</div>
+					<div class="form-options">
+						<label class="checkbox">
+							<input type="checkbox" id="remember-me">
+							<span>Recordarme</span>
+						</label>
+						<a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+					</div>
+					<button type="submit" class="btn primary full-width">Iniciar Sesión</button>
+				</form>
+				<div class="auth-switch">
+					<p>¿No tienes cuenta? <button type="button" id="show-register" class="link-btn">Regístrate aquí</button></p>
+				</div>
+				<div id="login-message" class="message"></div>
+			</div>
+		</div>
+
+		<!-- Register Form -->
+		<div id="register-section" class="auth-section">
+			<div class="auth-card">
+				<div class="christmas-badge">🎁 Únete a la familia 🎁</div>
+				<h2>Crear Cuenta</h2>
+				<form id="register-form" class="auth-form">
+					<div class="form-row">
+						<div class="form-group">
+							<label for="register-name">Nombre</label>
+							<input id="register-name" name="name" type="text" placeholder="Tu nombre" required />
+						</div>
+						<div class="form-group">
+							<label for="register-lastname">Apellido</label>
+							<input id="register-lastname" name="lastname" type="text" placeholder="Tu apellido" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="register-email">Correo electrónico</label>
+						<input id="register-email" name="email" type="email" placeholder="tu@email.com" required />
+					</div>
+					<div class="form-group">
+						<label for="register-phone">Teléfono</label>
+						<input id="register-phone" name="phone" type="tel" placeholder="+1 234 567 8900" />
+					</div>
+					<div class="form-row">
+						<div class="form-group">
+							<label for="register-password">Contraseña</label>
+							<div class="password-field">
+								<input id="register-password" name="password" type="password" placeholder="••••••••" required />
+								<button type="button" class="toggle-password" data-target="register-password">👁️</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="confirm-password">Confirmar</label>
+							<div class="password-field">
+								<input id="confirm-password" name="confirmPassword" type="password" placeholder="••••••••" required />
+								<button type="button" class="toggle-password" data-target="confirm-password">👁️</button>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="checkbox">
+							<input type="checkbox" id="accept-terms" required>
+							<span>Acepto los <a href="#" class="link">términos y condiciones</a></span>
+						</label>
+					</div>
+					<div class="form-group">
+						<label class="checkbox">
+							<input type="checkbox" id="newsletter">
+							<span>Quiero recibir ofertas especiales y noticias</span>
+						</label>
+					</div>
+					<button type="submit" class="btn primary full-width">Crear Cuenta</button>
+				</form>
+				<div class="auth-switch">
+					<p>¿Ya tienes cuenta? <button type="button" id="show-login" class="link-btn">Inicia sesión aquí</button></p>
+				</div>
+				<div id="register-message" class="message"></div>
+			</div>
+		</div>
+
+		<!-- Success Message -->
+		<div id="success-section" class="auth-section">
+			<div class="auth-card success-card">
+				<div class="success-icon">🎉</div>
+				<h2>¡Bienvenido a Ananda Pilates!</h2>
+				<p>Tu cuenta ha sido creada exitosamente. Ya puedes reservar tus clases favoritas.</p>
+				<a href="index.html" class="btn primary full-width">Ir al inicio</a>
+			</div>
+		</div>
+	</div>
+
+	<script src="auth-script.js"></script>
+</body>
+</html>

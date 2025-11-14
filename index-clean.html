@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Ananda Pilates — Reserva tu clase</title>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+		<a class="brand" href="#">Ananda Pilates</a>
+			<nav class="main-nav" aria-label="Navegación principal">
+				<button class="nav-toggle" onclick="document.getElementById('nav-list').classList.toggle('show')">☰</button>
+				<ul id="nav-list" class="nav-list">
+					<li><a href="#inicio" onclick="document.getElementById('inicio').scrollIntoView({behavior:'smooth'})">Inicio</a></li>
+					<li><a href="#noticias" onclick="document.getElementById('noticias').scrollIntoView({behavior:'smooth'})">Noticias</a></li>
+					<li><a href="#actualizaciones" onclick="document.getElementById('actualizaciones').scrollIntoView({behavior:'smooth'})">Actualizaciones</a></li>
+					<li><a href="#reservas" onclick="document.getElementById('reservas').scrollIntoView({behavior:'smooth'})">Reservas</a></li>
+					<li><a href="#conocer-mas" onclick="document.getElementById('conocer-mas').scrollIntoView({behavior:'smooth'})">Sobre</a></li>
+					<li><a href="auth.html">Registrarse</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section id="inicio">
+			<div class="hero-modern-wrapper">
+				<video class="hero-video-bg" autoplay loop muted playsinline>
+					<source src="https://videos.pexels.com/video-files/8138031/8138031-hd_1920_1080_25fps.mp4" type="video/mp4">
+				</video>
+				<div class="hero-gradient-overlay"></div>
+				<div class="hero container">
+					<div class="hero-content">
+						<div class="christmas-badge">🎄 Especial Navidad 🎄</div>
+						<h1>Ananda Pilates</h1>
+						<p class="hero-subtitle">Transforma tu cuerpo y mente esta Navidad</p>
+						<p class="lead">Regálate bienestar esta temporada. Reserva tu clase de pilates y comienza el año nuevo con energía renovada.</p>
+						<div class="hero-cta">
+							<button class="btn primary large" onclick="document.getElementById('reservas').scrollIntoView({behavior:'smooth'})">Reservar clase</button>
+							<button class="btn ghost large" onclick="document.getElementById('conocer-mas').scrollIntoView({behavior:'smooth'})">Conocer más</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="conocer-mas" class="conocer-section">
+			<div class="container">
+				<div class="conocer-header">
+					<h2>Conoce Ananda Pilates</h2>
+					<p class="muted">Tu espacio de bienestar y transformación</p>
+				</div>
+				
+				<div class="conocer-grid">
+					<div class="studio-info">
+						<div class="info-card">
+							<h3>📍 ¿Dónde estamos?</h3>
+							<p>Calle Principal #123<br>Centro, Ciudad<br>Código Postal 12345</p>
+						</div>
+						
+						<div class="info-card">
+							<h3>🕰️ Horarios</h3>
+							<p>Lunes a Viernes: 6:00 - 21:00<br>Sábados: 8:00 - 18:00<br>Domingos: 9:00 - 15:00</p>
+						</div>
+						
+						<div class="info-card">
+							<h3>📞 Contacto</h3>
+							<p>Teléfono: +1 (555) 123-4567<br>WhatsApp: +1 (555) 987-6543<br>Email: info@anandapilates.com</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="noticias">
+			<div class="container section-header">
+				<h2>Noticias</h2>
+				<p class="muted">Titulares y artículos recientes</p>
+			</div>
+			<div class="container cards-grid">
+				<article class="news-card">
+					<div class="news-body">
+						<h3>🎁 Promociones Navideñas</h3>
+						<p>Descuentos especiales en membresías anuales durante diciembre. ¡Regálate salud!</p>
+						<div class="meta">
+							<span>24 nov 2025</span>
+							<button class="btn small">Leer más</button>
+						</div>
+					</div>
+				</article>
+				<article class="news-card">
+					<div class="news-body">
+						<h3>❄️ Clases de Invierno</h3>
+						<p>Nuevos horarios especiales para la temporada navideña. Mantente activo en las fiestas.</p>
+						<div class="meta">
+							<span>20 nov 2025</span>
+							<button class="btn small">Leer más</button>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section id="actualizaciones">
+			<div class="container section-header">
+				<h2>Actualizaciones</h2>
+				<p class="muted">Cambios recientes y notas de versión</p>
+			</div>
+			<div class="container timeline">
+				<div class="update-item">
+					<div class="date">Nov 24, 2025</div>
+					<div class="bubble">
+						<h4>Versión 2.1.0</h4>
+						<p>Mejoras en la estabilidad y corrección de errores menores.</p>
+						<button class="btn tiny">Ver detalles</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="reservas">
+			<div class="container section-header">
+				<h2>Reservas y Horarios</h2>
+				<p class="muted">Elige tu clase, horario y asegura tu cupo.</p>
+			</div>
+			<div class="container cards-grid schedule">
+				<article class="class-card">
+					<div class="class-head">Pilates Básico</div>
+					<div class="class-body">
+						<p>Perfecto para principiantes. Movilidad y técnica básica.</p>
+						<div class="meta">Lunes 10:00 — 6 plazas</div>
+						<div class="card-actions">
+							<button class="btn primary" onclick="alert('Reserva: Pilates Básico - Lunes 10:00')">Reservar</button>
+						</div>
+					</div>
+				</article>
+				<article class="class-card">
+					<div class="class-head">Pilates Intermedio</div>
+					<div class="class-body">
+						<p>Para alumnos con experiencia. Trabajo de fuerza y control.</p>
+						<div class="meta">Miércoles 18:00 — 8 plazas</div>
+						<div class="card-actions">
+							<button class="btn primary" onclick="alert('Reserva: Pilates Intermedio - Miércoles 18:00')">Reservar</button>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-inner">
+			<small>© 2025 Ananda Pilates. Diseñado con cariño.</small>
+		</div>
+	</footer>
+</body>
+</html>

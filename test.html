@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Navigation</title>
+    <style>
+        section { height: 100vh; padding: 50px; }
+        #inicio { background: red; }
+        #noticias { background: blue; }
+        #reservas { background: green; }
+        nav { position: fixed; top: 0; background: white; width: 100%; }
+        nav a { margin: 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="document.getElementById('inicio').scrollIntoView({behavior:'smooth'})">Inicio</a>
+        <a href="#" onclick="document.getElementById('noticias').scrollIntoView({behavior:'smooth'})">Noticias</a>
+        <a href="#" onclick="document.getElementById('reservas').scrollIntoView({behavior:'smooth'})">Reservas</a>
+    </nav>
+    
+    <section id="inicio">
+        <h1>INICIO</h1>
+        <button onclick="document.getElementById('reservas').scrollIntoView({behavior:'smooth'})">IR A RESERVAS</button>
+    </section>
+    
+    <section id="noticias">
+        <h1>NOTICIAS</h1>
+    </section>
+    
+    <section id="reservas">
+        <h1>RESERVAS</h1>
+    </section>
+</body>
+</html>

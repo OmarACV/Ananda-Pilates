@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Panel Admin - Ananda Pilates</title>
+	<link rel="stylesheet" href="admin-style.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- Login Screen -->
+	<div id="login-screen" class="login-screen">
+		<div class="login-container">
+			<div class="admin-logo">
+				<h1>🧘‍♀️ Ananda Admin</h1>
+				<p>Panel de Administración</p>
+			</div>
+			<form id="admin-login" class="admin-login-form">
+				<input type="text" id="admin-user" placeholder="Usuario" required />
+				<input type="password" id="admin-pass" placeholder="Contraseña" required />
+				<button type="submit" class="btn-admin primary">Ingresar</button>
+			</form>
+			<div id="login-error" class="error-msg"></div>
+		</div>
+	</div>
+
+	<!-- Admin Dashboard -->
+	<div id="admin-dashboard" class="admin-dashboard hidden">
+		<header class="admin-header">
+			<div class="header-content">
+				<h1>🧘‍♀️ Ananda Admin</h1>
+				<button id="logout-btn" class="btn-admin ghost">Salir</button>
+			</div>
+		</header>
+
+		<main class="admin-main">
+			<!-- Status Cards -->
+			<div class="status-grid">
+				<div class="status-card">
+					<div class="status-icon">🌐</div>
+					<div class="status-info">
+						<h3>Estado del Sitio</h3>
+						<div class="status-toggle">
+							<label class="switch">
+								<input type="checkbox" id="site-status" checked>
+								<span class="slider"></span>
+							</label>
+							<span id="site-status-text">Activo</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="status-card">
+					<div class="status-icon">📅</div>
+					<div class="status-info">
+						<h3>Reservas Hoy</h3>
+						<p class="status-number" id="today-bookings">12</p>
+					</div>
+				</div>
+
+				<div class="status-card">
+					<div class="status-icon">👥</div>
+					<div class="status-info">
+						<h3>Total Clientes</h3>
+						<p class="status-number" id="total-clients">156</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Quick Actions -->
+			<div class="admin-section">
+				<h2>Acciones Rápidas</h2>
+				<div class="quick-actions">
+					<button class="action-btn" id="maintenance-mode">
+						🔧 Modo Mantenimiento
+					</button>
+					<button class="action-btn" id="emergency-close">
+						🚨 Cerrar Emergencia
+					</button>
+					<button class="action-btn" id="backup-data">
+						💾 Respaldar Datos
+					</button>
+				</div>
+			</div>
+
+			<!-- Class Management -->
+			<div class="admin-section">
+				<h2>Gestión de Clases</h2>
+				<div class="class-management">
+					<div class="class-item">
+						<div class="class-info">
+							<h4>Pilates Básico</h4>
+							<p>Lunes 10:00</p>
+						</div>
+						<div class="class-controls">
+							<input type="number" class="capacity-input" value="6" min="0" max="20">
+							<button class="btn-admin small">Actualizar</button>
+						</div>
+					</div>
+
+					<div class="class-item">
+						<div class="class-info">
+							<h4>Pilates Intermedio</h4>
+							<p>Miércoles 18:00</p>
+						</div>
+						<div class="class-controls">
+							<input type="number" class="capacity-input" value="8" min="0" max="20">
+							<button class="btn-admin small">Actualizar</button>
+						</div>
+					</div>
+
+					<div class="class-item">
+						<div class="class-info">
+							<h4>Pilates Avanzado</h4>
+							<p>Sábado 9:00</p>
+						</div>
+						<div class="class-controls">
+							<input type="number" class="capacity-input" value="5" min="0" max="20">
+							<button class="btn-admin small">Actualizar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Announcements -->
+			<div class="admin-section">
+				<h2>Anuncios</h2>
+				<div class="announcement-form">
+					<textarea id="announcement-text" placeholder="Escribe un anuncio para mostrar en la página..."></textarea>
+					<div class="announcement-controls">
+						<select id="announcement-type">
+							<option value="info">Información</option>
+							<option value="warning">Advertencia</option>
+							<option value="success">Éxito</option>
+							<option value="error">Error</option>
+						</select>
+						<button class="btn-admin primary" id="publish-announcement">Publicar</button>
+					</div>
+				</div>
+				<div id="current-announcement" class="current-announcement hidden">
+					<p id="announcement-preview"></p>
+					<button class="btn-admin ghost small" id="remove-announcement">Quitar</button>
+				</div>
+			</div>
+
+			<!-- Recent Bookings -->
+			<div class="admin-section">
+				<h2>Reservas Recientes</h2>
+				<div class="bookings-list" id="recent-bookings">
+					<div class="booking-item">
+						<div class="booking-info">
+							<h4>María García</h4>
+							<p>Pilates Básico - Lunes 10:00</p>
+							<small>Hace 2 horas</small>
+						</div>
+						<div class="booking-status confirmed">Confirmada</div>
+					</div>
+
+					<div class="booking-item">
+						<div class="booking-info">
+							<h4>Carlos López</h4>
+							<p>Pilates Intermedio - Miércoles 18:00</p>
+							<small>Hace 4 horas</small>
+						</div>
+						<div class="booking-status pending">Pendiente</div>
+					</div>
+
+					<div class="booking-item">
+						<div class="booking-info">
+							<h4>Ana Martínez</h4>
+							<p>Pilates Avanzado - Sábado 9:00</p>
+							<small>Hace 6 horas</small>
+						</div>
+						<div class="booking-status confirmed">Confirmada</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- System Info -->
+			<div class="admin-section">
+				<h2>Información del Sistema</h2>
+				<div class="system-info">
+					<div class="info-item">
+						<span>Última actualización:</span>
+						<span id="last-update">Hace 5 minutos</span>
+					</div>
+					<div class="info-item">
+						<span>Versión:</span>
+						<span>v1.0.0</span>
+					</div>
+					<div class="info-item">
+						<span>Estado del servidor:</span>
+						<span class="status-online">Online</span>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<!-- Maintenance Screen -->
+	<div id="maintenance-screen" class="maintenance-screen hidden">
+		<div class="maintenance-content">
+			<h1>🔧 Sitio en Mantenimiento</h1>
+			<p>Estamos mejorando la experiencia para ti. Volvemos pronto.</p>
+			<button id="exit-maintenance" class="btn-admin primary">Salir del Mantenimiento</button>
+		</div>
+	</div>
+
+	<script src="admin-script.js"></script>
+</body>
+</html>

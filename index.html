@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Ananda Pilates — Reserva tu clase</title>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			/* Fix para botones clickeables */
+			.nav-link, .btn, button, a {
+				pointer-events: auto !important;
+				z-index: 9999 !important;
+				position: relative !important;
+			}
+			.premium-overlay, .hero-gradient-overlay, .video-overlay {
+				pointer-events: none !important;
+			}
+		</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container header-inner">
+			<a class="brand" href="#">Ananda Pilates</a>
+				<nav class="main-nav" aria-label="Navegación principal">
+					<button class="nav-toggle" onclick="document.getElementById('nav-list').classList.toggle('show')">☰</button>
+								<ul id="nav-list" class="nav-list">
+												<li><a href="#" onclick="document.getElementById('inicio').scrollIntoView({behavior:'smooth'})">Inicio</a></li>
+												<li><a href="#" onclick="document.getElementById('noticias').scrollIntoView({behavior:'smooth'})">Noticias</a></li>
+												<li><a href="#" onclick="document.getElementById('actualizaciones').scrollIntoView({behavior:'smooth'})">Actualizaciones</a></li>
+												<li><a href="#" onclick="document.getElementById('reservas').scrollIntoView({behavior:'smooth'})">Reservas</a></li>
+												<li><a href="#" onclick="document.getElementById('conocer-mas').scrollIntoView({behavior:'smooth'})">Sobre</a></li>
+												<li><a href="auth.html">Registrarse</a></li>
+								</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section id="inicio" class="panel active" aria-labelledby="titulo-hero">
+				<div class="hero-modern-wrapper">
+					<video class="hero-video-bg" autoplay loop muted playsinline>
+						<source src="https://videos.pexels.com/video-files/8138031/8138031-hd_1920_1080_25fps.mp4" type="video/mp4">
+						<source src="https://videos.pexels.com/video-files/6740826/6740826-hd_1920_1080_30fps.mp4" type="video/mp4">
+					</video>
+					<div class="premium-overlay">
+						<div class="floating-elements">
+							<div class="glow-orb orb-1"></div>
+							<div class="glow-orb orb-2"></div>
+							<div class="glow-orb orb-3"></div>
+						</div>
+						<div class="premium-particles"></div>
+					</div>
+					<div class="hero-gradient-overlay"></div>
+					<div class="hero container">
+						<div class="hero-content">
+							<h1 id="titulo-hero">Ananda Pilates</h1>
+							<p class="hero-subtitle">Transforma tu cuerpo y mente</p>
+							<p class="lead">Reserva tu plaza en clases de pilates premium. Elige nivel, horario y asegura tu cupo en nuestro exclusivo estudio.</p>
+							<div class="hero-cta">
+								<button class="btn primary large" onclick="document.getElementById('reservas').scrollIntoView({behavior:'smooth'})">Reservar clase</button>
+								<button class="btn ghost large" onclick="document.getElementById('conocer-mas').scrollIntoView({behavior:'smooth'})">Conocer más</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Sección de videos de clases -->
+			<section class="video-showcase">
+				<div class="container">
+					<div class="showcase-header">
+						<h2>Nuestras Clases en Acción</h2>
+						<p class="muted">Descubre la experiencia Ananda Pilates</p>
+					</div>
+					<div class="video-collage">
+						<div class="video-item video-reformer">
+							<video autoplay loop muted playsinline>
+								<source src="videos/reformer.mp4" type="video/mp4">
+								<source src="https://videos.pexels.com/video-files/8138031/8138031-hd_1920_1080_25fps.mp4" type="video/mp4">
+							</video>
+							<div class="video-overlay">
+								<h3>Reformer</h3>
+								<p>Resistencia y precisión</p>
+							</div>
+						</div>
+						<div class="video-item video-cadillac">
+							<video autoplay loop muted playsinline>
+								<source src="videos/cadillac.mp4" type="video/mp4">
+								<source src="https://videos.pexels.com/video-files/6740826/6740826-hd_1920_1080_30fps.mp4" type="video/mp4">
+							</video>
+							<div class="video-overlay">
+								<h3>Cadillac</h3>
+								<p>Entrenamiento completo con torre</p>
+							</div>
+						</div>
+						<div class="video-item video-fisio">
+							<video autoplay loop muted playsinline>
+								<source src="videos/fisio.mp4" type="video/mp4">
+								<source src="https://videos.pexels.com/video-files/6998307/6998307-hd_1920_1080_30fps.mp4" type="video/mp4">
+							</video>
+							<div class="video-overlay">
+								<h3>Fisioterapia</h3>
+								<p>Rehabilitación y bienestar</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Sección Conocer Más -->
+			<section id="conocer-mas" class="conocer-section">
+				<div class="container">
+					<div class="conocer-header">
+						<h2>Conoce Ananda Pilates</h2>
+						<p class="muted">Tu espacio de bienestar y transformación</p>
+					</div>
+					
+					<div class="conocer-grid">
+						<!-- Video Tour del Estudio -->
+						<div class="tour-video-section">
+							<div class="video-container">
+								<video controls poster="images/studio-poster.jpg">
+									<source src="videos/studio-tour.mp4" type="video/mp4">
+									<!-- Placeholder mientras subes tu video -->
+									<source src="https://videos.pexels.com/video-files/8401778/8401778-hd_1920_1080_25fps.mp4" type="video/mp4">
+								</video>
+								<div class="play-overlay">
+									<div class="play-button">▶</div>
+									<p>Tour Virtual del Estudio</p>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Información del Estudio -->
+						<div class="studio-info">
+							<div class="info-card">
+								<h3>📍 ¿Dónde estamos?</h3>
+								<p>Calle Principal #123<br>
+								Centro, Ciudad<br>
+								Código Postal 12345</p>
+								<button class="btn ghost">Ver en Google Maps</button>
+							</div>
+							
+							<div class="info-card">
+								<h3>🕰️ Horarios</h3>
+								<p>Lunes a Viernes: 6:00 - 21:00<br>
+								Sábados: 8:00 - 18:00<br>
+								Domingos: 9:00 - 15:00</p>
+							</div>
+							
+							<div class="info-card">
+								<h3>📞 Contacto</h3>
+								<p>Teléfono: +1 (555) 123-4567<br>
+								WhatsApp: +1 (555) 987-6543<br>
+								Email: info@anandapilates.com</p>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Quiénes Somos -->
+					<div class="about-us-section">
+						<div class="about-content">
+							<div class="about-text">
+								<h3>Nuestra Historia</h3>
+								<p>Ananda Pilates nació con la visión de crear un espacio donde el bienestar físico y mental se encuentren en perfecta armonía. Nuestro equipo de instructores certificados te acompaña en cada paso de tu transformación.</p>
+								
+								<h3>Nuestra Misión</h3>
+								<p>Ofrecer una experiencia única de Pilates que fortalezca tu cuerpo, calme tu mente y eleve tu espíritu. Cada clase está diseñada para adaptarse a tus necesidades individuales.</p>
+								
+								<div class="values">
+									<div class="value-item">
+										<span class="value-icon">✨</span>
+										<span>Excelencia</span>
+									</div>
+									<div class="value-item">
+										<span class="value-icon">🤝</span>
+										<span>Comunidad</span>
+									</div>
+									<div class="value-item">
+										<span class="value-icon">🌱</span>
+										<span>Crecimiento</span>
+									</div>
+								</div>
+							</div>
+							
+							<div class="about-image">
+								<img src="images/team-photo.jpg" alt="Equipo Ananda Pilates" />
+								<div class="image-overlay">
+									<p>Nuestro equipo de instructores certificados</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="noticias" class="panel" aria-labelledby="noticias-titulo">
+				<div class="container section-header">
+					<h2 id="noticias-titulo">Noticias</h2>
+					<p class="muted">Titulares y artículos recientes</p>
+				</div>
+
+				<div class="container cards-grid" id="news-list">
+					<article class="news-card">
+						<div class="thumb" aria-hidden="true"></div>
+						<div class="news-body">
+							<h3>Nuevo lanzamiento beta</h3>
+							<p>Lanzamos la beta pública de la nueva plataforma con integración de APIs.</p>
+							<div class="meta">
+								<span>24 nov 2025</span>
+								<button class="btn small" aria-label="Leer más sobre Nuevo lanzamiento beta">Leer más</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="news-card">
+						<div class="thumb alt" aria-hidden="true"></div>
+						<div class="news-body">
+							<h3>Guía de accesibilidad</h3>
+							<p>Consejos rápidos para mejorar la accesibilidad de tus páginas web.</p>
+							<div class="meta">
+								<span>20 nov 2025</span>
+								<button class="btn small">Leer más</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="news-card">
+						<div class="thumb" aria-hidden="true"></div>
+						<div class="news-body">
+							<h3>Consejos de rendimiento</h3>
+							<p>Optimiza imágenes y reduce el tiempo de carga con estas prácticas.</p>
+							<div class="meta">
+								<span>12 nov 2025</span>
+								<button class="btn small">Leer más</button>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section id="actualizaciones" class="panel" aria-labelledby="updates-titulo">
+				<div class="container section-header">
+					<h2 id="updates-titulo">Actualizaciones</h2>
+					<p class="muted">Cambios recientes y notas de versión</p>
+				</div>
+
+				<div class="container timeline">
+					<div class="update-item">
+						<div class="date">Nov 24, 2025</div>
+						<div class="bubble">
+							<h4>Versión 2.1.0</h4>
+							<p>Mejoras en la estabilidad y corrección de errores menores. Actualización recomendada.</p>
+							<button class="btn tiny">Ver detalles</button>
+						</div>
+					</div>
+
+					<div class="update-item">
+						<div class="date">Nov 10, 2025</div>
+						<div class="bubble">
+							<h4>Modo oscuro</h4>
+							<p>Incluimos soporte completo para tema oscuro y preferencias de sistema.</p>
+							<button class="btn tiny">Ver detalles</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="sobre" class="panel" aria-labelledby="sobre-titulo">
+				<div class="container section-header">
+					<h2 id="sobre-titulo">Sobre</h2>
+					<p class="muted">Quiénes somos y cómo usamos esta página</p>
+				</div>
+				<div class="container about-grid">
+					<div>
+						<h3>Nuestra misión</h3>
+						<p>Entregar información clara, rápida y accesible para todos.</p>
+					</div>
+					<div>
+						<h3>Contacto</h3>
+						<p>Escríbenos a <a href="mailto:contacto@example.com">contacto@example.com</a></p>
+					</div>
+				</div>
+			</section>
+
+					<section id="ingresar" class="panel" aria-labelledby="ingresar-titulo">
+						<div class="container section-header">
+							<h2 id="ingresar-titulo">Ingresar</h2>
+							<p class="muted">Accede a tu cuenta de Ananda Pilates</p>
+						</div>
+						<div class="container">
+							<div class="login-card">
+								<form id="login-form" class="login-form" novalidate>
+									<label for="email">Correo electrónico</label>
+									<input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required />
+									<label for="password">Contraseña</label>
+									<div class="pw-row">
+										<input id="password" name="password" type="password" placeholder="••••••••" required />
+										<button type="button" id="toggle-pw" class="btn tiny ghost">Mostrar</button>
+									</div>
+									<div class="form-actions">
+										<button class="btn primary" type="submit">Iniciar sesión</button>
+										<button class="btn ghost" type="button" id="btn-registrar">Crear cuenta</button>
+									</div>
+								</form>
+								<div id="login-feedback" class="muted" aria-live="polite"></div>
+							</div>
+						</div>
+					</section>
+
+							<!-- Sección de reservas / horarios -->
+							<section id="reservas" class="panel" aria-labelledby="reservas-titulo">
+								<div class="container section-header">
+									<h2 id="reservas-titulo">Reservas y Horarios</h2>
+									<p class="muted">Elige tu clase, horario y asegura tu cupo.</p>
+								</div>
+
+								<div class="container cards-grid schedule" id="schedule-list">
+												<article class="class-card" data-capacity="6">
+													<div class="class-head">Pilates Básico</div>
+													<div class="class-body">
+														<p>Perfecto para principiantes. Movilidad y técnica básica.</p>
+														<div class="meta">Lunes 10:00 — <span class="seats">6</span> plazas</div>
+														<div class="card-actions"><button class="btn primary reserve-btn" data-class="Pilates Básico" data-time="Lunes 10:00">Reservar</button></div>
+													</div>
+												</article>
+
+												<article class="class-card" data-capacity="8">
+													<div class="class-head">Pilates Intermedio</div>
+													<div class="class-body">
+														<p>Para alumnos con experiencia. Trabajo de fuerza y control.</p>
+														<div class="meta">Miércoles 18:00 — <span class="seats">8</span> plazas</div>
+														<div class="card-actions"><button class="btn primary reserve-btn" data-class="Pilates Intermedio" data-time="Miércoles 18:00">Reservar</button></div>
+													</div>
+												</article>
+
+												<article class="class-card" data-capacity="5">
+													<div class="class-head">Pilates Avanzado</div>
+													<div class="class-body">
+														<p>Entrenamiento avanzado y secuencias desafiantes.</p>
+														<div class="meta">Sábado 9:00 — <span class="seats">5</span> plazas</div>
+														<div class="card-actions"><button class="btn primary reserve-btn" data-class="Pilates Avanzado" data-time="Sábado 9:00">Reservar</button></div>
+													</div>
+												</article>
+								</div>
+							</section>
+		</main>
+
+				<section class="bottom-options">
+					<div class="container">
+						<div class="options-grid">
+							<div class="opt">
+								<h4>Clases</h4>
+								<p>Horarios, niveles y profesores. Reserva tu plaza.</p>
+								<button class="btn primary">Ver clases</button>
+							</div>
+							<div class="opt">
+								<h4>Membresías</h4>
+								<p>Planes mensuales y anuales adaptados a ti.</p>
+								<button class="btn primary">Ver planes</button>
+							</div>
+							<div class="opt">
+								<h4>Contacto</h4>
+								<p>¿Dudas? Escríbenos y te ayudamos a elegir.</p>
+								<button class="btn ghost">Contactar</button>
+							</div>
+							<div class="opt">
+								<h4>Síguenos</h4>
+								<p>Instagram • Facebook • YouTube</p>
+								<button class="btn ghost">Seguir</button>
+							</div>
+						</div>
+					</div>
+				</section>
+
+		<footer class="site-footer">
+			<div class="container footer-inner">
+				<small>© 2025 MiPortal. Diseñado con cariño.</small>
+				<div class="footer-actions">
+					<button class="btn ghost" id="toggle-theme">Alternar tema</button>
+				</div>
+			</div>
+		</footer>
+
+			<!-- Modal de reserva -->
+			<div id="reserve-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+				<div class="modal-panel" role="document">
+					<button class="modal-close btn ghost" aria-label="Cerrar">✕</button>
+					<h3>Reservar clase</h3>
+					<form id="reserve-form">
+						<label for="res-name">Nombre</label>
+						<input id="res-name" name="name" type="text" required />
+						<label for="res-email">Correo</label>
+						<input id="res-email" name="email" type="email" required />
+						<label for="res-class">Clase</label>
+						<input id="res-class" name="class" type="text" readonly />
+						<label for="res-time">Horario</label>
+						<input id="res-time" name="time" type="text" readonly />
+						<div class="form-actions">
+							<button class="btn primary" type="submit">Confirmar reserva</button>
+							<button class="btn ghost modal-cancel" type="button">Cancelar</button>
+						</div>
+					</form>
+					<div id="reserve-feedback" class="muted" aria-live="polite"></div>
+				</div>
+			</div>
+
+	</body>
+</html>
+
